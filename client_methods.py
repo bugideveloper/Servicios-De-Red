@@ -1,8 +1,9 @@
 import os
 import time
 #método para listar archivos
-def get_archivos(path):
-    print("Obteniendo archivos del directorio local")
+
+def get_archivos(host,path):
+    print("Obteniendo archivos de "+str(host)+"  en la ruta "+str(path))
     path = path
     archivos = os.listdir(path)
     return archivos

@@ -16,6 +16,20 @@
   <body>
     <h1>Servicios de red</h1>
 
+    <script>
+      var ws = new WebSocket("ws://127.0.0.1:5678/"),
+          messages = document.createElement('ul');
+      ws.onmessage = function (event) {
+          var messages = document.getElementsByTagName('ul')[0],
+              message = document.createElement('li'),
+              content = document.createTextNode(event.data);
+          message.appendChild(content);
+          messages.appendChild(message);
+      };
+      document.body.appendChild(messages);
+  </script>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
